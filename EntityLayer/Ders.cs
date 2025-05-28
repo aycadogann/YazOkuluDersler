@@ -8,32 +8,9 @@ namespace EntityLayer
 {
     public class Ders
     {
-        private int dersId;
-        public int DersId
-        {
-            get => dersId;
-            set => dersId = value;
-        }
-
-        private string dersAd;
-        public string DersAd
-        {
-            get => dersAd;
-            set => dersAd = value;
-        }
-
-        private int dersMin;
-        public int DersMin
-        {
-            get=> dersMin;
-            set => dersMin = value;
-        }
-
-        private int dersMaks;
-        public int DersMaks
-        {
-            get => dersMaks;
-            set => dersMaks = value;
-        }
+        public int DersId { get; set; }
+        public string DersAd { get; set; }
+        public int DersMinKontenjan { get; set; }
+        public int DersMaksKontenjan { get; set; }
     }
 }

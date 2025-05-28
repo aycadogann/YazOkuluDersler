@@ -6,27 +6,10 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    public class Ogretmen
-    {
-        private int ogrtId;
-        public int OgrtId
-        {
-            get => ogrtId;
-            set => ogrtId = value;
-        }
-
-        private string ogrtAd;
-        public string OgrtAd 
-        {
-            get => ogrtAd;
-            set => ogrtAd = value;
-        }
-
-        private string ogrtBrans;
-        public string OgrtBrans
-        {
-            get => ogrtBrans;
-            set => ogrtBrans = value;
-        }
+   public class Ogretmen
+   {
+        public int OgrtId { get; set; }
+        public string OgrtAdSOyad { get; set; }
+        public int OgrtBrans { get; set; }
     }
 }
