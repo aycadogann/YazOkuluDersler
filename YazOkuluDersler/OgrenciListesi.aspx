@@ -28,8 +28,8 @@
                         <td><%#Eval("OgrSifre") %></td>
                         <td><%#Eval("OgrBakiye") %></td>
                         <td>
-                            <asp:HyperLink ID="HyperLink1" CssClass="btn btn-danger" runat="server">Sil</asp:HyperLink>
-                            <asp:HyperLink ID="HyperLink2" CssClass="btn btn-success" runat="server">Güncelle</asp:HyperLink>
+                            <asp:HyperLink NavigateUrl='<%#"~/OgrenciSil.aspx?OgrId="+Eval("OgrId") %>' ID="HyperLink1" CssClass="btn btn-danger" runat="server">Sil</asp:HyperLink>
+                            <asp:HyperLink NavigateUrl='<%#"~/OgrenciGuncelle.aspx?OgrId="+Eval("OgrId") %>' ID="HyperLink2" CssClass="btn btn-success" runat="server">Güncelle</asp:HyperLink>
                         </td>
                     </tr>
                 </ItemTemplate>

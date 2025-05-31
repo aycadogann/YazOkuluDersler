@@ -51,5 +51,16 @@ namespace DataAccessLayer
             
             return ogrenciler;
         }
+
+        public static bool OgrenciSil(int id)
+        {
+            SqlCommand komut = new SqlCommand("delete from Ogrenci where OgrId=@p1", Baglanti.baglanti);
+            if (komut.Connection.State != ConnectionState.Open)
+            {
+                komut.Connection.Open();
+            }
+            komut.Parameters.AddWithValue("@p1", id);
+            return komut.ExecuteNonQuery()>0;
+        }
     }
 }

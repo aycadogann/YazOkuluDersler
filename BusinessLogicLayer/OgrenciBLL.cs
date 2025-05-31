@@ -22,5 +22,14 @@ namespace BusinessLogicLayer
         {
             return OgrenciDAL.OgrenciListesi();
         }
+
+        public static bool OgrenciSilBLL(int id)
+        {
+            if (id!=0)
+            {
+                return OgrenciDAL.OgrenciSil(id);
+            }
+            return false;
+        }
     }
 }
