@@ -50,7 +50,7 @@
             <br />
 
         </div>
-        <asp:Button ID="btnGuncelle" runat="server" Text="Güncelle" CssClass="btn btn-warning" />
+        <asp:Button ID="btnGuncelle" runat="server" Text="Güncelle" CssClass="btn btn-warning" OnClick="btnGuncelle_Click" />
     </form>
 </asp:Content>
 

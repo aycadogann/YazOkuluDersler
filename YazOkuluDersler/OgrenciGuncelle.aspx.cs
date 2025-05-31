@@ -18,13 +18,31 @@ namespace YazOkuluDersler
             txtOgrId.Text = x.ToString();
             txtOgrId.Enabled = false;
 
+            if (Page.IsPostBack == false)
+            {
+                List<Ogrenci> OgrenciListe = OgrenciBLL.OgrenciDetayBLL(x);
+                txtOgrAd.Text = OgrenciListe[0].OgrAd.ToString();
+                txtOgrSoyad.Text = OgrenciListe[0].OgrSoyad.ToString();
+                txtOgrNumara.Text = OgrenciListe[0].OgrNumara.ToString();
+                txtOgrFotograf.Text = OgrenciListe[0].OgrFotograf.ToString();
+                txtOgrSifre.Text = OgrenciListe[0].OgrSifre.ToString();
+
+            }
+        }
+
+        protected void btnGuncelle_Click(object sender, EventArgs e)
+        {
+
             Ogrenci ogrenci = new Ogrenci();
-            List<Ogrenci> OgrenciListe = OgrenciBLL.OgrenciDetayBLL(x);
-            txtOgrAd.Text = OgrenciListe[0].OgrAd.ToString();
-            txtOgrSoyad.Text = OgrenciListe[0].OgrSoyad.ToString();
-            txtOgrNumara.Text = OgrenciListe[0].OgrNumara.ToString();
-            txtOgrFotograf.Text = OgrenciListe[0].OgrFotograf.ToString();
-            txtOgrSifre.Text = OgrenciListe[0].OgrSifre.ToString();
+            ogrenci.OgrId = Convert.ToInt32(txtOgrId.Text);
+            ogrenci.OgrAd = txtOgrAd.Text;
+            ogrenci.OgrSoyad = txtOgrSoyad.Text;
+            ogrenci.OgrNumara = txtOgrNumara.Text;
+            ogrenci.OgrSifre = txtOgrSifre.Text;
+            ogrenci.OgrFotograf = txtOgrFotograf.Text;
+
+            OgrenciBLL.OgrenciGuncelleBLL(ogrenci);
+            Response.Redirect("OgrenciListesi.aspx");
         }
     }
 }

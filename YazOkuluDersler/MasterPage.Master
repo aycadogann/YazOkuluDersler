@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Yaz Okulu Kayıt</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -21,7 +21,7 @@
                 <li><a href="#">Ana Sayfa</a></li>
                 <li><a href="OgrenciListesi.aspx">Öğrenciler</a></li>
                 <li><a href="WebForm1.aspx">Yeni Kayıt</a></li>
-                <li><a href="#">Dersler</a></li>
+                <li><a href="Dersler.aspx">Dersler</a></li>
                 <li><a href="#">Kontenjanlar</a></li>
                 <li><a href="#">Yardım</a></li>
             </ul>
