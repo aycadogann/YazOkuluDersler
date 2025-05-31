@@ -12,11 +12,15 @@ namespace BusinessLogicLayer
     {
         public static int OgrenciEkleBLL(Ogrenci ogr)
         {
-            if (ogr.OgrAd!=null && ogr.OgrSoyad!=null && ogr.OgrNumara!=null && ogr.OgrSifre!=null && ogr.OgrFotograf!=null)
+            if (ogr.OgrAd!=null && ogr.OgrSoyad!=null && ogr.OgrNumara!=null && ogr.OgrFotograf != null && ogr.OgrSifre!=null )
             {
                 return OgrenciDAL.OgrenciEkle(ogr);
             }
             return -1;
+        }
+        public static List<Ogrenci> OgrenciListeleBLL()
+        {
+            return OgrenciDAL.OgrenciListesi();
         }
     }
 }

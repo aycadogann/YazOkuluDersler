@@ -26,5 +26,30 @@ namespace DataAccessLayer
             komut.Parameters.AddWithValue("@p5", ogrenci.OgrSifre);
             return komut.ExecuteNonQuery();
         }
+        public static List<Ogrenci> OgrenciListesi()
+        {
+            List<Ogrenci> ogrenciler = new List<Ogrenci>();
+            SqlCommand komut2 = new SqlCommand("select * from Ogrenci", Baglanti.baglanti);
+            if (komut2.Connection.State != ConnectionState.Open)
+            {
+                komut2.Connection.Open();
+            }
+            SqlDataReader oku = komut2.ExecuteReader();
+            while (oku.Read())
+            {
+                Ogrenci ogr = new Ogrenci();
+                ogr.OgrId = Convert.ToInt32(oku["OgrId"].ToString());
+                ogr.OgrAd = oku["OgrAd"].ToString();
+                ogr.OgrSoyad = oku["OgrSoyad"].ToString();
+                ogr.OgrNumara = oku["OgrNumara"].ToString();
+                ogr.OgrFotograf = oku["OgrFotograf"].ToString();
+                ogr.OgrSifre = oku["OgrSifre"].ToString();
+                ogr.OgrBakiye = Convert.ToDouble(oku["OgrBakiye"].ToString());
+                ogrenciler.Add(ogr);
+            }
+            oku.Close();
+            
+            return ogrenciler;
+        }
     }
 }
