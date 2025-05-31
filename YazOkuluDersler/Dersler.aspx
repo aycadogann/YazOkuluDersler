@@ -11,9 +11,9 @@
         <br />
         <div>
             <asp:Label ID="Label2" runat="server" Text="Öğrenci ID"></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server" CssClass="from-control"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
         <br />
-        <asp:Button ID="btnTalepOlustur" runat="server" Text="Ders Talep Oluştur" CssClass="btn btn-warning" />
+        <asp:Button ID="btnTalepOlustur" runat="server" Text="Ders Talep Oluştur" CssClass="btn btn-warning" OnClick="btnTalepOlustur_Click" />
     </form>
 </asp:Content>

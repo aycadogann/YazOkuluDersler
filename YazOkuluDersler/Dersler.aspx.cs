@@ -19,9 +19,17 @@ namespace YazOkuluDersler
             //List<Ders> dersler = DersBLL.DersListeleBLL();
             DropDownList1.DataSource = DersBLL.DersListeleBLL();
             DropDownList1.DataTextField = "DersAd";
-            DropDownList1.SelectedValue = "DersId";
+            DropDownList1.DataValueField = "DersId";
             DropDownList1.DataBind();
             }
+        }
+
+        protected void btnTalepOlustur_Click(object sender, EventArgs e)
+        {
+            BasvuruFormu basvuruFormu = new BasvuruFormu();
+            basvuruFormu.BasvuruFormOgrenciId = int.Parse(TextBox1.Text);
+            basvuruFormu.BasvuruFormDersId = int.Parse(DropDownList1.SelectedValue.ToString());
+            DersBLL.TalepEkle(basvuruFormu);
         }
     }
 }
