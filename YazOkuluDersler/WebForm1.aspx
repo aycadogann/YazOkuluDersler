@@ -8,21 +8,21 @@
 
             <div>
                 <strong>
-                    <asp:Label for="txtOgrAd" runat="server" Text="Öğrenci Adı : "></asp:Label>
+                    <asp:Label for="txtOgrAd" runat="server" Text="Öğrenci Ad : "></asp:Label>
                 </strong>
                 <asp:TextBox ID="txtOgrAd" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
             <br />
             <div>
                 <strong>
-                    <asp:Label for="txtOgrSoyad" runat="server" Text="Öğrenci Soyadı : "></asp:Label>
+                    <asp:Label for="txtOgrSoyad" runat="server" Text="Öğrenci Soyad : "></asp:Label>
                 </strong>
                 <asp:TextBox ID="txtOgrSoyad" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
             <br />
             <div>
                 <strong>
-                    <asp:Label for="txtOgrNumara" runat="server" Text="Öğrenci Numarası : "></asp:Label>
+                    <asp:Label for="txtOgrNumara" runat="server" Text="Öğrenci Numara : "></asp:Label>
                 </strong>
                 <asp:TextBox ID="txtOgrNumara" runat="server" CssClass="form-control"></asp:TextBox>
             </div>

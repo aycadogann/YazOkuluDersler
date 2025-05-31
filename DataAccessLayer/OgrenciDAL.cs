@@ -26,6 +26,7 @@ namespace DataAccessLayer
             komut.Parameters.AddWithValue("@p5", ogrenci.OgrSifre);
             return komut.ExecuteNonQuery();
         }
+
         public static List<Ogrenci> OgrenciListesi()
         {
             List<Ogrenci> ogrenciler = new List<Ogrenci>();
@@ -54,13 +55,56 @@ namespace DataAccessLayer
 
         public static bool OgrenciSil(int id)
         {
-            SqlCommand komut = new SqlCommand("delete from Ogrenci where OgrId=@p1", Baglanti.baglanti);
-            if (komut.Connection.State != ConnectionState.Open)
+            SqlCommand komut3 = new SqlCommand("delete from Ogrenci where OgrId=@p1", Baglanti.baglanti);
+            if (komut3.Connection.State != ConnectionState.Open)
             {
-                komut.Connection.Open();
+                komut3.Connection.Open();
             }
-            komut.Parameters.AddWithValue("@p1", id);
-            return komut.ExecuteNonQuery()>0;
+            komut3.Parameters.AddWithValue("@p1", id);
+            return komut3.ExecuteNonQuery()>0;
+        }
+
+        public static List<Ogrenci> OgrenciDetay(int id)
+        {
+            List<Ogrenci> ogrenciler = new List<Ogrenci>();
+            SqlCommand komut4 = new SqlCommand("select * from Ogrenci where OgrId=@p1", Baglanti.baglanti);
+            komut4.Parameters.AddWithValue("@p1", id);
+            if (komut4.Connection.State != ConnectionState.Open)
+            {
+                komut4.Connection.Open();
+            }
+            SqlDataReader oku = komut4.ExecuteReader();
+            while (oku.Read())
+            {
+                Ogrenci ogr = new Ogrenci();
+                ogr.OgrAd = oku["OgrAd"].ToString();
+                ogr.OgrSoyad = oku["OgrSoyad"].ToString();
+                ogr.OgrNumara = oku["OgrNumara"].ToString();
+                ogr.OgrFotograf = oku["OgrFotograf"].ToString();
+                ogr.OgrSifre = oku["OgrSifre"].ToString();
+                ogr.OgrBakiye = Convert.ToDouble(oku["OgrBakiye"].ToString());
+                ogrenciler.Add(ogr);
+            }
+            oku.Close();
+
+            return ogrenciler;
+        }
+
+        public static bool OgrenciGuncelle(Ogrenci ogrenci)
+        {
+            SqlCommand komut5 = new SqlCommand("update Ogrenci set OgrAd=@p1, OgrSoyad=@p2, OgrNumara=@p3, OgrFotograf=@p4, OgrSifre=@p5 where OgrId=@p6", Baglanti.baglanti);
+            if (komut5.Connection.State != ConnectionState.Open)
+            {
+                komut5.Connection.Open();
+            }
+            komut5.Parameters.AddWithValue("@p1", ogrenci.OgrAd);
+            komut5.Parameters.AddWithValue("@p2", ogrenci.OgrSoyad);
+            komut5.Parameters.AddWithValue("@p3", ogrenci.OgrNumara);
+            komut5.Parameters.AddWithValue("@p4", ogrenci.OgrFotograf);
+            komut5.Parameters.AddWithValue("@p5", ogrenci.OgrSifre);
+            komut5.Parameters.AddWithValue("@p6", ogrenci.OgrId);
+            return komut5.ExecuteNonQuery() > 0;
+            
         }
     }
 }

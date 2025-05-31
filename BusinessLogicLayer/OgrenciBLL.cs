@@ -12,12 +12,13 @@ namespace BusinessLogicLayer
     {
         public static int OgrenciEkleBLL(Ogrenci ogr)
         {
-            if (ogr.OgrAd!=null && ogr.OgrSoyad!=null && ogr.OgrNumara!=null && ogr.OgrFotograf != null && ogr.OgrSifre!=null )
+            if (ogr.OgrAd != null && ogr.OgrSoyad != null && ogr.OgrNumara != null && ogr.OgrFotograf != null && ogr.OgrSifre != null)
             {
                 return OgrenciDAL.OgrenciEkle(ogr);
             }
             return -1;
         }
+
         public static List<Ogrenci> OgrenciListeleBLL()
         {
             return OgrenciDAL.OgrenciListesi();
@@ -25,9 +26,23 @@ namespace BusinessLogicLayer
 
         public static bool OgrenciSilBLL(int id)
         {
-            if (id!=0)
+            if (id != 0)
             {
                 return OgrenciDAL.OgrenciSil(id);
+            }
+            return false;
+        }
+
+        public static List<Ogrenci> OgrenciDetayBLL(int id)
+        {
+            return OgrenciDAL.OgrenciDetay(id);
+        }
+
+        public static bool OgrenciGuncelleBLL(Ogrenci ogr)
+        {
+            if (ogr.OgrAd != null && ogr.OgrSoyad != null && ogr.OgrNumara != null && ogr.OgrFotograf != null && ogr.OgrSifre != null && ogr.OgrId > 0)
+            {
+                return OgrenciDAL.OgrenciGuncelle(ogr);
             }
             return false;
         }
