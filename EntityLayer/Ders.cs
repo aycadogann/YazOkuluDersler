@@ -12,5 +12,6 @@ namespace EntityLayer
         public string DersAd { get; set; }
         public int DersMinKontenjan { get; set; }
         public int DersMaksKontenjan { get; set; }
+
     }
 }

@@ -46,5 +46,6 @@ namespace DataAccessLayer
             }
             return komut.ExecuteNonQuery();
         }
+
     }
 }

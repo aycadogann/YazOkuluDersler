@@ -67,20 +67,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="KarsilamaSayfasi.aspx" />
     <Content Include="Dersler.aspx" />
+    <Content Include="Fotograflar\welcome.jpg" />
+    <Content Include="KontenjanGoruntule.aspx" />
     <Content Include="OgrenciGuncelle.aspx" />
     <Content Include="OgrenciListesi.aspx" />
     <Content Include="OgrenciSil.aspx" />
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="YeniKayit.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KarsilamaSayfasi.aspx.cs">
+      <DependentUpon>KarsilamaSayfasi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KarsilamaSayfasi.aspx.designer.cs">
+      <DependentUpon>KarsilamaSayfasi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dersler.aspx.cs">
       <DependentUpon>Dersler.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Dersler.aspx.designer.cs">
       <DependentUpon>Dersler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KontenjanGoruntule.aspx.cs">
+      <DependentUpon>KontenjanGoruntule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KontenjanGoruntule.aspx.designer.cs">
+      <DependentUpon>KontenjanGoruntule.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -111,12 +128,12 @@
       <DependentUpon>OgrenciSil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="YeniKayit.aspx.cs">
+      <DependentUpon>YeniKayit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="YeniKayit.aspx.designer.cs">
+      <DependentUpon>YeniKayit.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
